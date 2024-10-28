@@ -5,7 +5,7 @@ import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.AriaRole;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         try (Playwright playwright = Playwright.create()) {
             Faker faker = new Faker();
             Browser browser = playwright.webkit()
@@ -23,8 +23,9 @@ public class App {
             page.locator("input[name='middleName']").fill("");
             page.locator("input[name='lastName']").fill(faker.name().lastName());
             page.locator("div.oxd-form-row.user-form-header > div > label > span").click();
-            page.locator("input.oxd-input.oxd-input--active").nth(0).fill(faker.name().username());
-            String password = faker.funnyName().name() + "@1A";
+            page.locator("input.oxd-input.oxd-input--active").nth(5).fill(faker.name().username());
+            String password = faker.internet().password();
+
             page.locator("input[type='password']").nth(0).fill(password);
             page.locator("input[type='password']").nth(1).fill(password);
             page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Save")).click();
@@ -32,6 +33,7 @@ public class App {
             assert page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Personal Details"))
                     .isVisible() == true;
 
+            Thread.sleep(5000);
         }
     }
 }
