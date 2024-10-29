@@ -20,7 +20,7 @@ def test_add_new_song(page: Page, clean_db):
     tab: str = Faker().text()
     lyrics: str = Faker().text()
 
-    page.goto("http://ec2-18-203-244-192.eu-west-1.compute.amazonaws.com/")
+    page.goto("http://ec2-63-35-198-228.eu-west-1.compute.amazonaws.com//")
 
     home_page: HomePage = HomePage(page)
     home_page.get_bt_add_song.click()

@@ -1,0 +1,55 @@
+{
+  "cookies": [
+    {
+      "name": "YSC",
+      "value": "Dx3w0MC6i4w",
+      "domain": ".youtube.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "VISITOR_INFO1_LIVE",
+      "value": "Us--mEz9qwg",
+      "domain": ".youtube.com",
+      "path": "/",
+      "expires": 1745745935.010239,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "VISITOR_PRIVACY_METADATA",
+      "value": "CgJFUxIcEhgSFhMLFBUWFwwYGRobHB0eHw4PIBAREiEgaA%3D%3D",
+      "domain": ".youtube.com",
+      "path": "/",
+      "expires": 1745745935.012589,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "rZqap1KvoBkfH30vePpnij6Mp3WlBe3VdL0T3ABc04k-1730193935-1.0.1.1-XCp0nti5GohXH3t3Q2TfvsDEutYpkcd.ayqIT4T7yqLjt_aksqWtYtEk.5a0DKdgVHsP9WmkXZFlFsDUtTx2Ig",
+      "domain": ".discogs.com",
+      "path": "/",
+      "expires": 1730195735.858347,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "http://ec2-63-35-198-228.eu-west-1.compute.amazonaws.com",
+      "localStorage": [
+        {
+          "name": "vuex",
+          "value": "{\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0ZXN0QGFyc3lzLmNvbSIsInBhc3N3b3JkIjoiJDJhJDA4JHNqNnk2ZjBsM01FU1JtbUR2NUhDRHUuaDN6YWxKVy5hWmUvc3I3R0tvZWNVdVpqSTZrYmVTIiwidXBkYXRlZEF0IjoiMjAyNC0xMC0yOVQwOToyNjowMi40MzJaIiwiY3JlYXRlZEF0IjoiMjAyNC0xMC0yOVQwOToyNjowMi40MzJaIiwiaWF0IjoxNzMwMTkzOTYyLCJleHAiOjE3MzA3OTg3NjJ9.k5h2Uy1kE5V9YDrTRfLjplk3LWdqC1guXbEJroowiLg\",\"user\":{\"id\":2,\"email\":\"test@arsys.com\",\"password\":\"$2a$08$sj6y6f0l3MESRmmDv5HCDu.h3zalJW.aZe/sr7GKoecUuZjI6kbeS\",\"updatedAt\":\"2024-10-29T09:26:02.432Z\",\"createdAt\":\"2024-10-29T09:26:02.432Z\"},\"isUserLoggedIn\":true,\"route\":{\"name\":\"songs\",\"path\":\"/songs\",\"hash\":\"\",\"query\":{},\"params\":{},\"fullPath\":\"/songs\",\"meta\":{},\"from\":{\"name\":\"register\",\"path\":\"/register\",\"hash\":\"\",\"query\":{},\"params\":{},\"fullPath\":\"/register\",\"meta\":{}}}}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,9 @@
+import time
 from faker import Faker
 import pytest
 
 from data.song import Song
-from playwright.sync_api import Playwright
+from playwright.sync_api import Playwright, Page
 
 
 @pytest.fixture
@@ -24,7 +25,20 @@ def random_song() -> Song:
 @pytest.fixture(scope="session")
 def clean_db(playwright: Playwright):
     request_context = playwright.request.new_context(
-        base_url="http://ec2-18-203-244-192.eu-west-1.compute.amazonaws.com:8081/"
+        base_url="http://ec2-63-35-198-228.eu-west-1.compute.amazonaws.com/:8081/"
     )
     yield request_context
     request_context.dispose()
+
+
+@pytest.fixture(scope="session", autouse=True)
+def login(browser):
+    page = browser.new_context().new_page()
+    page.goto("http://ec2-63-35-198-228.eu-west-1.compute.amazonaws.com/#/login")
+    page.locator("input[name='email']").fill("test@arsys.com")
+    page.locator("input[name='password']").fill("12345678")
+    page.get_by_role("button", name="Login").click()
+    time.sleep(1)
+    page.context.storage_state(path="auth.json")
+    time.sleep(1)
+    page.context.close()

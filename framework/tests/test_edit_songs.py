@@ -9,7 +9,7 @@ from page_objects.song_view_page import SongViewPage
 def test_edit_song(page: Page, random_song: Song, clean_db):
     response = clean_db.get(url="reset")
 
-    page.goto("http://ec2-18-203-244-192.eu-west-1.compute.amazonaws.com/")
+    page.goto("http://ec2-63-35-198-228.eu-west-1.compute.amazonaws.com/")
 
     home_page: HomePage = HomePage(page)
 
@@ -33,5 +33,5 @@ def test_edit_song(page: Page, random_song: Song, clean_db):
     )
 
     song_form_page.modify_song()
-    print(random_song.title)
+
     assert page.get_by_text(random_song.title).is_visible() == True
