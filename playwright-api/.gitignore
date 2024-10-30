@@ -1,0 +1,7 @@
+/allure-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+__pycache__/
+.venv/
+.pytest_cache/
