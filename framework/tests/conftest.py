@@ -25,19 +25,20 @@ def random_song() -> Song:
 @pytest.fixture(scope="session")
 def clean_db(playwright: Playwright):
     request_context = playwright.request.new_context(
-        base_url="http://ec2-63-35-198-228.eu-west-1.compute.amazonaws.com/:8081/"
+        base_url="http://ec2-3-249-201-236.eu-west-1.compute.amazonaws.com:8081/"
     )
     yield request_context
     request_context.dispose()
 
 
 @pytest.fixture(scope="session", autouse=True)
-def login(browser):
+def login(browser, clean_db):
+    clean_db.get("reset")
     page = browser.new_context().new_page()
-    page.goto("http://ec2-63-35-198-228.eu-west-1.compute.amazonaws.com/#/login")
+    page.goto("http://ec2-3-249-201-236.eu-west-1.compute.amazonaws.com/#/register")
     page.locator("input[name='email']").fill("test@arsys.com")
     page.locator("input[name='password']").fill("12345678")
-    page.get_by_role("button", name="Login").click()
+    page.get_by_role("button", name="Register").click()
     time.sleep(1)
     page.context.storage_state(path="auth.json")
     time.sleep(1)

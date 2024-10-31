@@ -9,7 +9,7 @@ from page_objects.song_view_page import SongViewPage
 def test_edit_song(page: Page, random_song: Song, clean_db):
     response = clean_db.get(url="reset")
 
-    page.goto("http://ec2-63-35-198-228.eu-west-1.compute.amazonaws.com/")
+    page.goto("http://ec2-3-249-201-236.eu-west-1.compute.amazonaws.com/")
 
     home_page: HomePage = HomePage(page)
 

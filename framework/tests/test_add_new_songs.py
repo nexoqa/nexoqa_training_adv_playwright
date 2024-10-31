@@ -1,5 +1,5 @@
 from faker import Faker
-from playwright.sync_api import Page, Request
+from playwright.sync_api import Page, expect
 
 
 from page_objects.add_song_form_page import AddSongFormPage
@@ -20,7 +20,7 @@ def test_add_new_song(page: Page, clean_db):
     tab: str = Faker().text()
     lyrics: str = Faker().text()
 
-    page.goto("http://ec2-63-35-198-228.eu-west-1.compute.amazonaws.com//")
+    page.goto("http://ec2-3-249-201-236.eu-west-1.compute.amazonaws.com/")
 
     home_page: HomePage = HomePage(page)
     home_page.get_bt_add_song.click()
@@ -36,5 +36,7 @@ def test_add_new_song(page: Page, clean_db):
         lyrics=lyrics,
     )
     add_new_page.add_song()
+
+    
 
     assert page.get_by_text(title).is_visible() == True
