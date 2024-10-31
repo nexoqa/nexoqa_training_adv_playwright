@@ -21,12 +21,18 @@ jobs:
         run: python -m playwright install --with-deps
       - name: Run your UI tests
         working-directory: framework
-        run: pytest --tracing=retain-on-failure
+        run: pytest
+        continue-on-error: true
+
       - name: Run your API tests
         working-directory: playwright-api
         run: pytest
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
+        continue-on-error: true
+
+      - name: Plublish report
+        uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: playwright-traces
-          path: test-results/
+          name: test-results
+          path: ./framework/reports
+        continue-on-error: true

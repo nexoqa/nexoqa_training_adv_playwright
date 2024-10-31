@@ -21,3 +21,5 @@ tomli==2.0.2
 typing_extensions==4.12.2
 urllib3==2.2.3
 faker==30.8.1
+pytest-html==4.1.1
+

@@ -1,0 +1,36 @@
+name: 'Allure Report'
+description: 'Generate Allure Report'
+inputs:
+  allure_results:
+    description: 'Allure test result data dir'
+    required: true
+    default: 'allure-results'
+  allure_report:
+    description: 'Allure report target dir'
+    required: true
+    default: 'allure-report'
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+
+    - name: Install allure
+      shell: bash
+      env:
+        RELEASE: 2.27.0
+        ALLURE_REPO: 'https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline'
+      run: |
+        wget --no-verbose -O /tmp/allure-$RELEASE.tgz $ALLURE_REPO/$RELEASE/allure-commandline-$RELEASE.tgz
+        tar -xf /tmp/allure-$RELEASE.tgz -C $(pwd)
+        rm -rf /tmp/*
+        chmod -R +x $(pwd)/allure-$RELEASE/bin
+    - name: Generate Allure Report
+      shell: bash
+      env:
+        RELEASE: 2.27.0
+      run: |
+        export PATH=$PATH:$(pwd)/allure-$RELEASE/bin
+        allure generate ${{inputs.allure_results}} --single-file --clean -o ${{inputs.allure_report}}
