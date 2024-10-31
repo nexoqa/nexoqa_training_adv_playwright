@@ -30,6 +30,8 @@ def test_only_two_songs(page: Page, clean_db):
 
     home_page: HomePage = HomePage(page)
 
+    page.wait_for_timeout(1000)
+
     assert len(page.locator("div.song").all()) == 2
 
 
@@ -48,5 +50,7 @@ def test_only_two_songs2(page: Page, clean_db):
     page.goto("http://ec2-3-249-201-236.eu-west-1.compute.amazonaws.com/")
 
     home_page: HomePage = HomePage(page)
+
+    page.wait_for_timeout(1000)
 
     assert len(page.locator("div.song").all()) == 2

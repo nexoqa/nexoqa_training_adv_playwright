@@ -37,6 +37,6 @@ def test_add_new_song(page: Page, clean_db):
     )
     add_new_page.add_song()
 
-    
+    page.wait_for_timeout(1000)
 
     assert page.get_by_text(title).is_visible() == True
