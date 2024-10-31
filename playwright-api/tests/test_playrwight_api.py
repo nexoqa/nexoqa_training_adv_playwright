@@ -9,7 +9,7 @@ def create_request_context(
     playwright: Playwright,
 ) -> Generator[APIRequestContext, None, None]:
     request_context = playwright.request.new_context(
-        base_url="http://ec2-34-245-218-17.eu-west-1.compute.amazonaws.com:8081"
+        base_url="http://ec2-3-249-201-236.eu-west-1.compute.amazonaws.com:8081"
     )
     yield request_context
     request_context.dispose()
