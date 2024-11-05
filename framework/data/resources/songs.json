@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "title": "Ellen Snyder",
+    "artist": "Michelle Ingram",
+    "genre": "Jacob Li",
+    "album": "Cathy Anderson",
+    "albumImageUrl": "https://is3-ssl.mzstatic.com/image/thumb/Features/d0/cc/62/dj.nanioukp.jpg/268x0w.jpg",
+    "youtubeId": "WIUAC03YMlA",
+    "lyrics": "Building shake out be hundred deal card with. Hard decide former both may green ball.\nHuge per visit since inside. Score across industry whatever drop wide when you.",
+    "tab": "Present official low pay build collection range top. Term party hope although.",
+    "createdAt": "2018-02-13T12:56:24.432Z",
+    "updatedAt": "2024-10-29T08:41:35.216Z"
+  },
+  {
+    "id": 2,
+    "title": "In the blood",
+    "artist": "John Mayer",
+    "genre": "Acoustic Rock",
+    "album": "The Search for Everything",
+    "albumImageUrl": "https://images.genius.com/a64eea0c361b6b02f4b7423adf80bb6e.1000x992x1.jpg",
+    "youtubeId": "ob-jS7bqYgI",
+    "lyrics": "",
+    "tab": "",
+    "createdAt": "2018-02-13T12:56:24.432Z",
+    "updatedAt": "2024-10-28T16:57:44.192Z"
+  }
+]

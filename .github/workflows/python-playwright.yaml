@@ -1,0 +1,38 @@
+name: Framework tests
+on:
+  push:
+    branches: [main, ci-jenkins]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        working-directory: framework
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Ensure browsers are installed
+        run: python -m playwright install --with-deps
+      - name: Run your UI tests
+        working-directory: framework
+        run: pytest
+        continue-on-error: true
+
+      - name: Run your API tests
+        working-directory: playwright-api
+        run: pytest
+        continue-on-error: true
+
+      - name: Plublish report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: ./framework/reports
+        continue-on-error: true

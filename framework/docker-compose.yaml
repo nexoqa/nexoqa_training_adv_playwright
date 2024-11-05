@@ -1,0 +1,11 @@
+version: '3'
+services:
+  playwright:
+    image: mcr.microsoft.com/playwright/python:v1.47.0-noble
+    working_dir: /framework
+    entrypoint: ./script.sh
+    volumes:
+      - ./:/framework
+
+
+
